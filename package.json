@@ -12,9 +12,12 @@
         "lint:auto": "yarn eslint ./src/** --fix --no-color && yarn prettier --write --no-color ."
     },
     "dependencies": {
+        "axios": "^0.27.2",
+        "lodash": "^4.17.21",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "react-router-dom": "^6.3.0"
+        "react-router-dom": "^6.3.0",
+        "universal-cookie": "^4.0.4"
     },
     "devDependencies": {
         "@types/react": "^18.0.0",
@@ -31,24 +34,10 @@
         "eslint-plugin-react": "^7.28.0",
         "eslint-plugin-react-hooks": "^4.3.0",
         "git-format-staged": "^3.0.0",
-        "husky": "^8.0.0",
-        "lint-staged": "^13.0.1",
         "postcss": "^8.4.14",
         "prettier": "2.6.2",
         "tailwindcss": "^3.1.2",
         "typescript": "^4.6.3",
         "vite": "^2.9.9"
-    },
-    "lint-staged": {
-        "**/*.{js,jsx,ts,tsx}": [
-            "yarn lint:auto",
-            "git add ."
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn lint:auto",
-            "pre-push": "yarn lint:auto"
-        }
     }
 }

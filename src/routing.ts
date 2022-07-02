@@ -1,26 +1,13 @@
 import React, { LazyExoticComponent } from 'react';
-
-const Page1 = React.lazy(() =>
-    import('./pages/Example').then((module) => ({ default: module.Page1 }))
-);
-
-const Page2 = React.lazy(() =>
-    import('./pages/Example').then((module) => ({ default: module.Page2 }))
-);
-
-const Page3 = React.lazy(() =>
-    import('./pages/Example').then((module) => ({ default: module.Page3 }))
-);
-
 const DefPage = React.lazy(() =>
-    import('./pages/Example').then((module) => ({
-        default: module.DefaultPage,
+    import('./pages/MainPage').then((module) => ({
+        default: module.MainPage,
     }))
 );
 
 const PageNotFound = React.lazy(() =>
-    import('./pages/Example').then((module) => ({
-        default: module.PageNotFound,
+    import('./pages/NotFound').then((module) => ({
+        default: module.NotFound,
     }))
 );
 
@@ -38,25 +25,19 @@ const PageNotFoundRouting: PageRouting = {
 
 export const Routing: PageRouting[] = [
     {
-        title: 'Default Page',
-        path: '/',
+        title: 'Page Not Found',
+        path: '/404',
+        component: PageNotFound,
+    },
+    {
+        title: 'everything',
+        path: '/:slug',
         component: DefPage,
     },
-
     {
-        title: 'Page 1',
-        path: '/page1',
-        component: Page1,
-    },
-    {
-        title: 'Page 2',
-        path: '/page2',
-        component: Page2,
-    },
-    {
-        title: 'Page 3',
-        path: '/page3',
-        component: Page3,
+        title: 'everything',
+        path: '/',
+        component: DefPage,
     },
     PageNotFoundRouting,
 ];

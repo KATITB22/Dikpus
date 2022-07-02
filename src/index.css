@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: Magilio;
+    src: url('./resource/Magilio.otf') format('opentype');
+}
+
+@font-face {
+    font-family: Alegreya;
+    src: url('./resource/AlegreyaSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: Alegreya;
+    src: url('./resource/AlegreyaSans-Bold.ttf');
+    font-weight: bold;
+}
+
+.background {
+    background-image: url('./resource/background.jpg');
+}
+
+.background-portrait {
+    background-image: url('./resource/bg-portrait.png');
+}
+
+.background-2 {
+    background-image: url('./resource/background-2.jpg');
+}
+
+.background-portrait-2 {
+    background-image: url('./resource/bg-2-portrait.png');
+}
+
+.content {
+    font-family: Alegreya, Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-family: Magilio, Arial, Helvetica, sans-serif;
+}
