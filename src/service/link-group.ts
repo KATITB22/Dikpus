@@ -1,4 +1,4 @@
-import { FailureCallbackFunction, GenericService, SuccessCallbackFunction } from ".";
+import { FailureCallbackFunction, GenericService, SuccessCallbackFunction } from '.';
 import APIClient from '../utils/api-client';
 
 class LinkGroupService extends GenericService {

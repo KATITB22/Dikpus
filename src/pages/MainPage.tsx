@@ -1,27 +1,24 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { DesktopButton, MobileButton } from "../components/Button";
-import { LayoutDesktop } from "../layout/LayoutDesktop";
-import { LayoutMobile } from "../layout/LayoutMobile";
-import Service from "../service/link-group";
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { DesktopButton, MobileButton } from '../components/Button';
+import { LayoutDesktop } from '../layout/LayoutDesktop';
+import { LayoutMobile } from '../layout/LayoutMobile';
+import Service from '../service/link-group';
 
 export const MainPage = () => {
     let { slugParams } = useParams();
     const navigation = useNavigate();
     const [links, setLinks] = useState([]);
-    const [section, setSection] = useState("Link Penting");
-    const [slug, setSlug] = useState("public");
+    const [section, setSection] = useState('Link Penting');
 
     useEffect(() => {
         if (!slugParams) {
-            slugParams = "public";
+            slugParams = 'public';
         }
-        setSlug(slugParams);
-        Service.getLinks(slug, (res) => {
+        Service.getLinks(slugParams, (res) => {
             setLinks(res.links);
             setSection(res.section);
-            setSlug(slug);
-        }, () => navigation('../404'))
+        }, () => navigation('../404'));
     }, []);
 
     return (
@@ -39,7 +36,7 @@ export const MainPage = () => {
                 </div>
                 <div className="flex flex-col overflow-y-scroll max-h-[52vh]">
                     {links && links.map((each: any) => (
-                        <DesktopButton content={each.display_text} onClick={() => { window.location.href = each.url }} />
+                        <DesktopButton content={each.display_text} onClick={() => { window.location.href = each.url; }} />
                     ))}
                     {links.length === 0 && <h2 className="md:text-2xl lg:text-4xl lg:text-zinc-300 content">- No Data -</h2>}
                 </div>
@@ -53,15 +50,15 @@ export const MainPage = () => {
                 </h1>
                 <br />
                 <div className="flex flex-col">
-                    <h2 className="mb-3 text-2xl text-zinc-300 font-bold content">Section</h2>
+                    <h2 className="mb-3 text-2xl text-zinc-300 font-bold content">{section}</h2>
                 </div>
                 <div className="flex flex-col overflow-y-scroll max-h-[65vh]">
                     {links && links.map((each: any) => (
-                        <MobileButton content={each.display_text} onClick={() => { window.location.href = each.url }} />
+                        <MobileButton content={each.display_text} onClick={() => { window.location.href = each.url; }} />
                     ))}
                     {links.length === 0 && <h2 className="text-2xl text-zinc-300 content">- No Data -</h2>}
                 </div>
             </LayoutMobile>
         </>
-    )
+    );
 };

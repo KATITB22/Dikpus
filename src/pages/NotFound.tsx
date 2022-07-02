@@ -1,5 +1,5 @@
-import { LayoutDesktop } from "../layout/LayoutDesktop";
-import { LayoutMobile } from "../layout/LayoutMobile";
+import { LayoutDesktop } from '../layout/LayoutDesktop';
+import { LayoutMobile } from '../layout/LayoutMobile';
 
 export const NotFound = () => (
     <>

@@ -1,4 +1,5 @@
 import React, { LazyExoticComponent } from 'react';
+
 const DefPage = React.lazy(() =>
     import('./pages/MainPage').then((module) => ({
         default: module.MainPage,
@@ -31,12 +32,12 @@ export const Routing: PageRouting[] = [
     },
     {
         title: 'everything',
-        path: '/:slug',
+        path: '/',
         component: DefPage,
     },
     {
         title: 'everything',
-        path: '/',
+        path: '/:slugParams',
         component: DefPage,
     },
     PageNotFoundRouting,
