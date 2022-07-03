@@ -40,6 +40,10 @@ export const MainPage = () => {
                     ))}
                     {links.length === 0 && <h2 className="md:text-2xl lg:text-4xl lg:text-zinc-300 content">- No Data -</h2>}
                 </div>
+                <div className='absolute bottom-10 w-[100%] flex flex-col content-end text-center text-white content'>
+                    <p>Dikpus Website ©2022. Created by IT KAT'22.</p>
+                    <p>Not a <b>FINAL WEBSITE</b> for KAT ITB 2022. Purposely made only for <b>DIKPUS ITB 2022</b>.</p>
+                </div>
             </LayoutDesktop>
             <LayoutMobile secondary>
                 <h1 className="mt-24 text-5xl md:text-8xl bold text-zinc-900 font-bold title">
@@ -57,6 +61,11 @@ export const MainPage = () => {
                         <MobileButton content={each.display_text} onClick={() => { window.location.href = each.url; }} />
                     ))}
                     {links.length === 0 && <h2 className="text-2xl text-zinc-300 content">- No Data -</h2>}
+                </div>
+                <div className='absolute bottom-10 w-[100%] flex flex-col content-end text-center text-white content text-sm'>
+                    <p>Dikpus Website ©2022. Created by IT KAT'22.</p>
+                    <p>Not a <b>FINAL WEBSITE</b> for KAT ITB 2022.</p>
+                    <p>Purposely made only for <b>DIKPUS ITB 2022</b>.</p>
                 </div>
             </LayoutMobile>
         </>
